@@ -1,14 +1,15 @@
 const mongoose = require("mongoose");
 
 // Define mongoose schemas
-
 const adminSchema = new mongoose.Schema({
     adminId: { type: String, required: true },
     password: { type: String, required: true },
 });
 const userSchema = new mongoose.Schema({
     username: { type: String },
-    password: String
+    password: String,
+    phoneNumber:{type:Number},
+    userEmail:String
 });
 const PropertySchema = new mongoose.Schema({
     pid: Number,

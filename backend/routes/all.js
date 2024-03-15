@@ -7,12 +7,14 @@ const router = express.Router()
 
 //user signup
 router.post("/signup", async (req, res) => {
-    const { username, password } = req.body;
+    const { username, password,phoneNumber,userEmail } = req.body;
     const existinguser = await User.findOne({ username: username });
     if (!existinguser) {
         const newuser = new User({
             username: username,
             password: password,
+            phoneNumber:phoneNumber,
+            userEmail:userEmail
         })
         await newuser.save()
         const token = jwt.sign({ username, password }, secretKey)
@@ -97,7 +99,6 @@ router.delete("/properties/:pid", authenticateJwt, async (req, res) => {
         res.status(404).json({ message: "Property not found" })
     }
 });
-
 
 
 
