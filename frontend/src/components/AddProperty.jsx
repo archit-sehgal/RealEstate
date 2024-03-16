@@ -58,23 +58,23 @@ function Addproperty() {
             <option value="Hotel">Hotel</option>
           </select>
         </label>
-        <TextField id="outlined-basic" label="Outlined" variant="outlined" 
+        <TextField id="outlined-basic" label="Enter Property Description" variant="outlined" 
           type="text"
-          placeholder="Enter property description"
+          placeholder="Enter here"
           name="pdesc"
           value={pdesc}
           onChange={(e) => setpdesc(e.target.value)}
         />
-        <TextField id="outlined-basic" label="Outlined" variant="outlined" 
+        <TextField id="outlined-basic" label="Enter expected price" variant="outlined" 
           type="number"
-          placeholder="Enter expected price"
+          placeholder="Enter here"
           name="pprice"
           value={pprice}
           onChange={(e) => setpprice(e.target.value)}
         />
-        <TextField id="outlined-basic" label="Outlined" variant="outlined" 
+        <TextField id="outlined-basic" label="Enter property location" variant="outlined" 
           type="text"
-          placeholder="Enter property location"
+          placeholder="Enter here"
           name="plocation"
           value={plocation}
           onChange={(e) => setplocation(e.target.value)}
@@ -93,7 +93,7 @@ function Addproperty() {
     </div>
   );}else{
     return(
-      <div>
+      <div className="addpropcont flex">
         <h1>Kindly login first!!!</h1>
       </div>
     )

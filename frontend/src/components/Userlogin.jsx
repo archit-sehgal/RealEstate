@@ -4,9 +4,7 @@ import TextField from "@mui/material/TextField";
 import { useNavigate } from "react-router-dom";
 function Userlogin() {
   return (
-    <div className="userlogincomp comp flex">
       <Login />
-    </div>
   );
 }
 

@@ -31,11 +31,16 @@ function Properties() {
       {properties.map((p) => (
         <div className="singleproperty flex">
           <div className="singpropimg">
-            <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg" alt="!property photo!" />
+            <img
+              src="https://images.pexels.com/photos/1370704/pexels-photo-1370704.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              alt="!property photo!"
+            />  
           </div>
           <div className="singpropdesc flex">
             <p>Id-{p.pid}</p>
-            <p>{p.ptype} for {p.purpose} in {p.plocation}.</p>
+            <p>
+              {p.ptype} for {p.purpose} in {p.plocation}.
+            </p>
           </div>
         </div>
       ))}

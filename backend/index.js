@@ -15,7 +15,7 @@ app.use(cors())
 app.use("/", allRouter);
 app.use("/admin",adminRouter)
 // connect to mongodb
-mongoose.connect("your mongodb cluster link here", {
+mongoose.connect("mongodb+srv://architsehgal19:Architgr8@cluster0.1gxssef.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0", {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })

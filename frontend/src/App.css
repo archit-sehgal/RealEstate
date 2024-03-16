@@ -18,6 +18,21 @@ body {
     display: flex;
 }
 
+.nav{
+    width: 100%;
+    background-color: whitesmoke;
+    position: fixed;
+    align-items: center;
+    height: 50px;
+    justify-content: right;
+    gap:20px;
+    padding-inline: 20px;
+    z-index:100;
+}
+.links{
+    text-decoration: none;
+}
+
 .singleproperty{
     margin:10px;
     background-color:rgb(146, 140, 140);
@@ -41,9 +56,9 @@ body {
     gap:10px;
 }
 .addpropcont{
-    margin-inline:auto ;
+    margin-inline:auto;
     width: fit-content;
-    background-color: rgb(118, 64, 64);
+    background-color: rgb(189, 187, 187);
     padding: 20px;
     border-radius: 5px;
     margin-top: 10vh;
@@ -52,6 +67,15 @@ Button{
     align-self: center;
     width: max-content;
 }
+
+.allproperties{
+    margin-top: 10vh;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+}
+
 .singpropimg{
     height: 80%;
     display: flex;
@@ -73,4 +97,32 @@ Button{
     padding-inline: 5px;
     font-size: .9rem;
     z-index: 2;
+}
+
+.homecomp{
+    width: 100%;
+    min-height:100vh;
+    background: url("https://images.pexels.com/photos/87223/pexels-photo-87223.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+.homeheader{
+    margin-bottom: 10vh;
+    background-color:rgb(250, 250, 250,.4);
+    backdrop-filter: blur(3px);
+    border-radius: 5px;
+    border: 1px solid rgb(249, 249, 249,.9);
+    padding: 20px;
+    flex-direction: column;
+    align-items: center;
+}
+.homeheader h1{
+    font-size: 3rem;
+}
+.homeheader span{
+    font-size: 1.5rem;
 }
