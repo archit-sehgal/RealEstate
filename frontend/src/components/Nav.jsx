@@ -13,6 +13,7 @@ function Nav() {
   if(!key){
   return (
     <div className="nav flex">
+      <Link className="links" to={"/"}><i class="fa-solid fa-house"></i></Link>
       <Link className="links" to={"/signup"}>Signup</Link>
       <Link className="links" to={"/login"}>Login</Link>
       <Link className="links" to={"/properties"}>Explore</Link>
@@ -27,7 +28,7 @@ function Nav() {
         <Link className="links" onClick={()=>{
           localStorage.removeItem("token");
           window.location="/listproperty"
-        }}>logout</Link>
+        }}>Logout</Link>
       </div>
     );
   }

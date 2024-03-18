@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-
+import { useNavigate } from "react-router-dom";
 function Properties() {
   const [properties, setProperties] = useState([]);
-
+  const navigate = useNavigate();
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -31,10 +31,15 @@ function Properties() {
       {properties.map((p) => (
         <div className="singleproperty flex">
           <div className="singpropimg">
-            <img
-              src="https://images.pexels.com/photos/1370704/pexels-photo-1370704.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-              alt="!property photo!"
-            />  
+            {p.pimages.map((image, index) => (
+              <img
+                key={`${p.pid}-${index}`}
+                src={`http://localhost:3000/uploads/${image}`}
+                alt={`Image ${index}`}
+               onClick={()=>{
+                navigate(`/property/${p.pid}`)
+               }}/>
+            ))}
           </div>
           <div className="singpropdesc flex">
             <p>Id-{p.pid}</p>

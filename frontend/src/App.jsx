@@ -7,6 +7,7 @@ import Usersignup from "./components/Usersignup";
 import Addproperty from "./components/AddProperty";
 import Nav from "./components/Nav";
 import Home from "./components/Home";
+import SingleProperty from "./components/SingleProperty";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/signup" element={<Usersignup />}></Route>
           <Route path="/login" element={<Userlogin />}></Route>
           <Route path="/listproperty" element={<Addproperty />}></Route>
+          <Route path="/property/:pid" element={<SingleProperty/>}></Route>
         </Routes>
       </div>
     </Router>
