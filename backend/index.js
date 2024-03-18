@@ -17,7 +17,7 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use("/", allRouter);
 app.use("/admin",adminRouter)
 // connect to mongodb
-mongoose.connect("mongodb+srv://architsehgal19:Architgr8@cluster0.1gxssef.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0", {
+mongoose.connect("mongodb cluster url", {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
