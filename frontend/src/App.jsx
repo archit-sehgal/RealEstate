@@ -8,6 +8,7 @@ import Addproperty from "./components/AddProperty";
 import Nav from "./components/Nav";
 import Home from "./components/Home";
 import SingleProperty from "./components/SingleProperty";
+import Queries from "./components/Queries";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/login" element={<Userlogin />}></Route>
           <Route path="/listproperty" element={<Addproperty />}></Route>
           <Route path="/property/:pid" element={<SingleProperty/>}></Route>
+          <Route path="/queries" element={<Queries/>}></Route>
         </Routes>
       </div>
     </Router>

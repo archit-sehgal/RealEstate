@@ -1,11 +1,12 @@
 const mongoose = require("mongoose");
 const express = require("express");
 const jwt = require("jsonwebtoken");
-const { User, Property } = require("../db/db");
+const { User, Property,Query } = require("../db/db");
 const { secretKey, authenticateJwt } = require("../middleware/auth");
 const router = express.Router()
 const multer = require("multer");
 const path = require("path");
+const { pid } = require("process");
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -100,6 +101,46 @@ router.get("/property/:pid", async (req, res) => {
     }
 });
 
+//send query to property owner
+router.get("/queries",authenticateJwt,async(req,res)=>{
+    try {
+        const queries = await Query.find({ownerid:req.user.username})
+        res.send(queries);
+    }
+    catch (error) {
+        res.json({ message: "error occured", error });
+    }
+})
+
+//delete query
+router.delete("/delquery/:pid",authenticateJwt,async(req,res)=>{
+    const pid=req.params.pid;
+    try {
+        const queries = await Query.deleteOne({pid:pid,ownerid:req.user.username})
+        res.send(queries);
+    }
+    catch (error) {
+        res.json({ message: "error occured", error });
+    }
+})
+
+//send queries
+router.post("/sendqueries",async(req,res)=>{
+    const{contactPersonName,contactPersonNumber,contactPersonMessage,ownerid,pid}=req.body;
+    const newQuery=new Query({
+        contactPersonName:contactPersonName,
+        contactPersonNumber:contactPersonNumber,
+        contactPersonMessage:contactPersonMessage,
+        ownerid:ownerid,
+        pid:pid
+    })
+    try {
+        await newQuery.save();
+        res.status(201).json({ message: "Query added successfully" });
+      } catch (error) {
+        res.status(400).json({ message: "Error adding Query", error: error });
+      }
+})
 //edit a property
 router.post("/edit/:pid", authenticateJwt, async (req, res) => {
     const pid = req.params.pid;

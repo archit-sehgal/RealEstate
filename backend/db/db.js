@@ -21,14 +21,22 @@ const PropertySchema = new mongoose.Schema({
     plocation: { type: String || Number },
     pimages: [String]
 });
-
+const QuerySchema=new mongoose.Schema({
+    contactPersonName:{type:String},
+    contactPersonNumber:{type:Number},
+    contactPersonMessage:{type:String},
+    ownerid:{type:String},
+    pid:{type:Number}
+})
 // Define mongoose models
 const User = mongoose.model('User', userSchema);
 const Admin = mongoose.model('Admin', adminSchema);
 const Property = mongoose.model('Property', PropertySchema);
+const Query=mongoose.model("Query",QuerySchema);
 
 module.exports = {
     User,
     Admin,
-    Property
+    Property,
+    Query
 }

@@ -9,8 +9,8 @@ function Userlogin() {
 }
 
 function Login() {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState();
+  const [password, setPassword] = useState();
   const navigate=useNavigate();
   return (
     <div className="addpropcont flex">
