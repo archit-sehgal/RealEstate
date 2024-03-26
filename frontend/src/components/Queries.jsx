@@ -21,15 +21,8 @@ function Queries() {
     <div style={{ marginTop: 50, padding: 10 }}>
       <h1>Queries</h1>
       {queries.map((query) => (
-        <div
-          style={{
-            border: "2px solid red",
-            padding: 10,
-            margin: "10px 0px",
-            flexDirection: "column",
-            maxWidth: 400,
-          }}
-          className="flex"
+        <div 
+          className="querycont flex"
         >
           <p
             style={{
@@ -38,7 +31,7 @@ function Queries() {
               justifyContent: "space-between",
             }}
           >
-            <a>Name: {query.contactPersonName}</a>
+            <a><b>Name:</b> {query.contactPersonName}</a>
             <i
               style={{ cursor: "pointer", color: "#1976D2" }}
               class="fa-solid fa-trash"
@@ -58,8 +51,8 @@ function Queries() {
               }}
             ></i>
           </p>
-          <p>Phn.No: {query.contactPersonNumber}</p>
-          <p>message: {query.contactPersonMessage}</p>
+          <p><b>Phn.No:</b> {query.contactPersonNumber}</p>
+          <p><b>Message:</b> {query.contactPersonMessage}</p>
           <p style={{ display: "flex", gap: 20, margin: "10px 0px" }}>
             <Button variant="contained" style={{ marginLeft: "10px" }}>
               <a

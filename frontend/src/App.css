@@ -18,60 +18,66 @@ body {
     display: flex;
 }
 
-.nav{
+.nav {
     width: 100%;
     background-color: whitesmoke;
     position: fixed;
     align-items: center;
     height: 50px;
     justify-content: right;
-    gap:20px;
+    gap: 20px;
     padding-inline: 20px;
-    z-index:100;
+    z-index: 100;
 }
-.links{
+
+.links {
     text-decoration: none;
 }
 
-.singleproperty{
-    margin:10px;
-    background-color:rgb(146, 140, 140);
+.singleproperty {
+    margin: 10px;
+    background-color: rgb(146, 140, 140);
     color: white;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     max-width: 100%;
-    width:300px;
+    width: 300px;
     height: 250px;
     overflow: hidden;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
-.formbox{
+
+.formbox {
     flex-direction: column;
     margin: 10px;
-    gap:5px;
+    gap: 5px;
 }
-.addproperty{
+
+.addproperty {
     flex-direction: column;
-    gap:10px;
+    gap: 10px;
 }
-.addpropcont{
-    margin-inline:auto;
+
+.addpropcont {
+    margin-inline: auto;
     width: fit-content;
     background-color: rgb(189, 187, 187);
     padding: 20px;
     border-radius: 5px;
     margin-top: 10vh;
 }
-.addpropcont Button{
-    margin-inline:5px;
+
+.addpropcont Button {
+    margin-inline: 5px;
 }
-Button{
+
+Button {
     align-self: center;
     width: max-content;
 }
 
-.allproperties{
+.allproperties {
     margin-top: 10vh;
     flex-wrap: wrap;
     width: 100%;
@@ -79,19 +85,22 @@ Button{
     justify-content: center;
 }
 
-.singpropimg{
+.singpropimg {
     height: 80%;
     display: flex;
     transition: scale .3s ease-in-out;
 }
-.singpropimg img{
-    width:100%;
+
+.singpropimg img {
+    width: 100%;
 }
-.singpropimg:hover{
+
+.singpropimg:hover {
     scale: 1.12;
     cursor: pointer;
 }
-.singpropdesc{
+
+.singpropdesc {
     justify-content: space-between;
     color: black;
     align-items: center;
@@ -102,9 +111,9 @@ Button{
     z-index: 2;
 }
 
-.homecomp{
+.homecomp {
     width: 100%;
-    min-height:100vh;
+    min-height: 100vh;
     background: url("https://images.pexels.com/photos/87223/pexels-photo-87223.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
     background-repeat: no-repeat;
     background-size: cover;
@@ -113,52 +122,58 @@ Button{
     justify-content: center;
     padding: 10px;
 }
-.homeheader{
+
+.homeheader {
     margin-bottom: 10vh;
-    background-color:rgb(250, 250, 250,.4);
+    background-color: rgb(250, 250, 250, .4);
     backdrop-filter: blur(3px);
     border-radius: 5px;
-    border: 1px solid rgb(249, 249, 249,.9);
+    border: 1px solid rgb(249, 249, 249, .9);
     padding: 20px;
     flex-direction: column;
     align-items: center;
 }
-.homeheader h1{
+
+.homeheader h1 {
     font-size: 3rem;
 }
-.homeheader span{
+
+.homeheader span {
     font-size: 1.5rem;
 }
 
 
-.singlproppage{
+.singlproppage {
     width: 100%;
     margin-top: 5vb;
     padding: 10px;
     min-height: 100vh;
 }
 
-.sp-img-desc{
+.sp-img-desc {
     width: 100%;
     margin-top: 20px;
     flex-direction: column;
-    gap:10px;
+    gap: 10px;
     align-items: center;
     justify-content: flex-start;
 }
-.sp-img{
+
+.sp-img {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.sp-img img{
+
+.sp-img img {
     width: 100%;
     max-width: 900px;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
-.sp-desc{
+
+.sp-desc {
     max-width: 90%;
     min-width: 50%;
     height: fit-content;
@@ -172,21 +187,23 @@ Button{
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-.sp-to-explore-btn{
-    position:fixed!important;
+.sp-to-explore-btn {
+    position: fixed !important;
     left: 10px !important;
     top: 60px !important;
 }
-.contactdiv{
+
+.contactdiv {
     position: fixed;
-    background-color:rgb(0, 0, 0,.9);
+    background-color: rgb(0, 0, 0, .9);
     width: 100%;
     height: 100vh;
     align-items: center;
     justify-content: center;
     padding: 40px;
 }
-.contactform{
+
+.contactform {
     width: 400px;
     height: fit-content;
     background-color: rgb(255, 255, 255);
@@ -195,12 +212,26 @@ Button{
     position: relative;
     padding: 60px 10px 20px 10px;
     box-shadow: rgba(255, 255, 255, 0.4) 1px 3px 9px;
-    gap:20px;
+    gap: 20px;
 }
-.contactform p{
+
+.contactform p {
     align-self: center;
 }
-.formsubmitted,.formloading{
+
+.formsubmitted,
+.formloading {
     font-size: 2rem;
     color: #1976D2;
+}
+
+.querycont {
+    padding: 10px;
+    margin: 10px 0px;
+    flex-direction:column;
+    max-width: 400px;
+    background-color: rgb(222, 219, 219);
+    border-radius: 10px;
+    border: 1px solid rgb(110, 109, 109);
+    box-shadow: rgba(184, 182, 182, 0.6) 1px 3px 9px;
 }
