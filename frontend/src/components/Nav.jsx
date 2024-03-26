@@ -25,6 +25,7 @@ function Nav() {
       <div className="nav flex">
         <Link className="links" to={"/properties"}>Explore</Link>
         <Link className="links" to={"/queries"}>Inbox</Link>
+        <Link className="links" to={"/myproperties"}>My Properties</Link>
         <Link className="links" to={"/listproperty"}>Post Your Property</Link>
         <Link className="links" onClick={()=>{
           localStorage.removeItem("token");
