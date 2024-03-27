@@ -3,8 +3,10 @@ import { useNavigate } from "react-router-dom";
 import { Button } from "@mui/material";
 function Queries() {
   const [queries, setQueries] = useState([]);
+  const [key, setKey] = useState("");
   const navigate = useNavigate();
   useEffect(() => {
+    setKey(localStorage.getItem("token"));
     fetch("http://localhost:3000/queries", {
       method: "GET",
       headers: {
@@ -17,6 +19,11 @@ function Queries() {
       });
     });
   });
+  setInterval(() => {
+    setKey(localStorage.getItem("token"));
+  }, 1000);
+
+  if(key){
   return (
     <div style={{ marginTop: 50, padding: 10 }}>
       <h1>Queries</h1>
@@ -76,6 +83,30 @@ function Queries() {
         </div>
       ))}
     </div>
-  );
+  )}else{
+    return(
+      <div className="addpropmain flex">
+        <div className="addpropcont">
+          <h1>Kindly login first!!!</h1>
+          <Button
+            variant="contained"
+            onClick={() => {
+              navigate("/login");
+            }}
+          >
+            Login
+          </Button>
+          <Button
+            variant="outlined"
+            onClick={() => {
+              navigate("/signup");
+            }}
+          >
+            Signup
+          </Button>
+        </div>
+      </div>
+    )
+  }
 }
 export default Queries;

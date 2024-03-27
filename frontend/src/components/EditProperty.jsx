@@ -66,7 +66,16 @@ function EditProperty() {
     return () => clearInterval(interval);
   }, [pid]);
   return (
-    <div className="flex editpropertiespage">
+    <div className="editpropertiespage flex">
+      <Button
+        className="sp-to-explore-btn"
+        variant="contained"
+        onClick={() => {
+          navigate("/myproperties");
+        }}
+      >
+        <i class="fa-solid fa-arrow-left"></i> Back
+      </Button>
       <div className="singleproperty flex">
         {Object.keys(property).length > 0 ? (
           <>
@@ -93,7 +102,7 @@ function EditProperty() {
           <p>Loading...</p>
         )}
       </div>
-      <div className="flex addpropcont">
+      <div className=" addpropcont flex">
         <form onSubmit={handleSubmit} className="addproperty flex">
           <label>
             Purpose:

@@ -19,58 +19,68 @@ function MyProperties() {
         console.error("Error fetching data:", error);
       });
   }, []);
-  return (
-    <div className="allproperties flex">
-      {myprop.map((p) => (
-        <div className="singleproperty flex">
-          <div className="singpropimg">
-            {p.pimages.map((image, index) => (
-              <img
-                key={`${p.pid}-${index}`}
-                src={`http://localhost:3000/uploads/${image}`}
-                alt={`Image ${index}`}
+  if(myprop.length>=1){
+    return (
+      <div className="allproperties flex">
+        {myprop.map((p) => (
+          <div className="singleproperty flex">
+            <div className="singpropimg">
+              {p.pimages.map((image, index) => (
+                <img
+                  key={`${p.pid}-${index}`}
+                  src={`http://localhost:3000/uploads/${image}`}
+                  alt={`Image ${index}`}
+                  onClick={() => {
+                    navigate(`/property/${p.pid}`);
+                  }}
+                />
+              ))}
+            </div>
+            <div className="singpropdesc flex">
+              <p>Id-{p.pid}</p>
+              <p>
+                {p.ptype} for {p.purpose} in {p.plocation}.
+              </p>
+              <i
+                style={{ cursor: "pointer", fontSize: "1rem" }}
+                class="fa-solid fa-pen-to-square"
                 onClick={() => {
-                  navigate(`/property/${p.pid}`);
+                  navigate(`/edit/${p.pid}`);
                 }}
-              />
-            ))}
+              ></i>
+              <i
+                style={{ cursor: "pointer", fontSize: "1rem", marginInline: 20 }}
+                class="fa-solid fa-trash"
+                onClick={() => {
+                  fetch(`http://localhost:3000/del/${p.pid}`,{
+                    method:"DELETE",
+                    headers:{
+                      "content-type":"application/json",
+                      authorization:"bearer "+localStorage.getItem("token")
+                    }
+                  }).then((res) => res.json())
+                  .then((data) => {
+                    Setmyprop(data);
+                    window.location="/myproperties"
+                  })
+                  .catch((error) => {
+                    console.error("Error fetching data:", error);
+                  });
+                }}
+              ></i>
+            </div>
           </div>
-          <div className="singpropdesc flex">
-            <p>Id-{p.pid}</p>
-            <p>
-              {p.ptype} for {p.purpose} in {p.plocation}.
-            </p>
-            <i
-              style={{ cursor: "pointer", fontSize: "1rem" }}
-              class="fa-solid fa-pen-to-square"
-              onClick={() => {
-                navigate(`/edit/${p.pid}`);
-              }}
-            ></i>
-            <i
-              style={{ cursor: "pointer", fontSize: "1rem", marginInline: 20 }}
-              class="fa-solid fa-trash"
-              onClick={() => {
-                fetch(`http://localhost:3000/del/${p.pid}`,{
-                  method:"DELETE",
-                  headers:{
-                    "content-type":"application/json",
-                    authorization:"bearer "+localStorage.getItem("token")
-                  }
-                }).then((res) => res.json())
-                .then((data) => {
-                  Setmyprop(data);
-                  window.location="/myproperties"
-                })
-                .catch((error) => {
-                  console.error("Error fetching data:", error);
-                });
-              }}
-            ></i>
-          </div>
+        ))}
+      </div>
+    );
+  }
+  else{
+  return (
+    <div className="addpropmain flex">
+        <div className="addpropcont" style={{maxWidth:"300px"}}>
+          <h1 style={{color:"lightGreen",letterSpacing:".1rem",wordSpacing:".3rem"}}>No Properties Found!</h1>
         </div>
-      ))}
-    </div>
-  );
+      </div>
+  )};
 }
 export default MyProperties;

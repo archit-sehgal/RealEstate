@@ -43,88 +43,106 @@ function Addproperty() {
   };
   if (localStorage.getItem("token")) {
     return (
-      <div className="flex addpropcont">
-        <form onSubmit={handleSubmit} className="addproperty flex">
-          <label>
-            Purpose:
-            <select
+      <div className="addpropmain flex">
+        <div className="flex addpropcont">
+          <form onSubmit={handleSubmit} className="addproperty flex">
+            <label>
+              Purpose:
+              <select
+                required
+                value={purpose}
+                onChange={(e) => setpurpose(e.target.value)}
+              >
+                <option value="">Select Purpose</option>
+                <option value="Sale">Sale</option>
+                <option value="Rent">Rent</option>
+              </select>
+            </label>
+            <label>
+              Property Type:
+              <select
+                required
+                value={ptype}
+                onChange={(e) => setptype(e.target.value)}
+              >
+                <option value="">Select Property Type</option>
+                <option value="House">House</option>
+                <option value="Land">Land</option>
+                <option value="Factory">Factory</option>
+                <option value="Shop">Shop</option>
+                <option value="Showroom">Showroom</option>
+                <option value="Industry">Industry</option>
+                <option value="Hotel">Hotel</option>
+              </select>
+            </label>
+            <TextField
+              id="outlined-basic"
+              label="Enter Property Description"
+              variant="outlined"
+              type="text"
+              placeholder="Enter here"
+              name="pdesc"
+              value={pdesc}
+              onChange={(e) => setpdesc(e.target.value)}
               required
-              value={purpose}
-              onChange={(e) => setpurpose(e.target.value)}
-            >
-              <option value="">Select Purpose</option>
-              <option value="Sale">Sale</option>
-              <option value="Rent">Rent</option>
-            </select>
-          </label>
-          <label>
-            Property Type:
-            <select
+            />
+            <TextField
+              id="outlined-basic"
+              label="Enter expected price"
+              variant="outlined"
+              type="number"
+              placeholder="Enter here"
+              name="pprice"
+              value={pprice}
+              onChange={(e) => setpprice(e.target.value)}
               required
-              value={ptype}
-              onChange={(e) => setptype(e.target.value)}
-            >
-              <option value="">Select Property Type</option>
-              <option value="House">House</option>
-              <option value="Land">Land</option>
-              <option value="Factory">Factory</option>
-              <option value="Shop">Shop</option>
-              <option value="Showroom">Showroom</option>
-              <option value="Industry">Industry</option>
-              <option value="Hotel">Hotel</option>
-            </select>
-          </label>
-          <TextField
-            id="outlined-basic"
-            label="Enter Property Description"
-            variant="outlined"
-            type="text"
-            placeholder="Enter here"
-            name="pdesc"
-            value={pdesc}
-            onChange={(e) => setpdesc(e.target.value)}
-            required
-          />
-          <TextField
-            id="outlined-basic"
-            label="Enter expected price"
-            variant="outlined"
-            type="number"
-            placeholder="Enter here"
-            name="pprice"
-            value={pprice}
-            onChange={(e) => setpprice(e.target.value)}
-            required
-          />
-          <TextField
-            id="outlined-basic"
-            label="Enter property location"
-            variant="outlined"
-            type="text"
-            placeholder="Enter here"
-            name="plocation"
-            value={plocation}
-            onChange={(e) => setplocation(e.target.value)}
-            required
-          />
-          <input
-            type="file"
-            name="images"
-            onChange={(e) => setpimages(e.target.files ?? [])}
-            required
-          />
-          <Button type="submit" variant="contained">
-            Submit
-          </Button>
-        </form>
+            />
+            <TextField
+              id="outlined-basic"
+              label="Enter property location"
+              variant="outlined"
+              type="text"
+              placeholder="Enter here"
+              name="plocation"
+              value={plocation}
+              onChange={(e) => setplocation(e.target.value)}
+              required
+            />
+            <input
+              type="file"
+              name="images"
+              onChange={(e) => setpimages(e.target.files ?? [])}
+              required
+            />
+            <Button type="submit" variant="contained">
+              Submit
+            </Button>
+          </form>
+        </div>
       </div>
     );
   } else {
     return (
-      <div className="addpropcont">
-        <h1>Kindly login first!!!</h1>
-        <Button variant="contained" onClick={()=>{navigate("/login")}}>Login</Button>
-        <Button variant="outlined" onClick={()=>{navigate("/signup")}}>Signup</Button>
+      <div className="addpropmain flex">
+        <div className="addpropcont">
+          <h1>Kindly login first!!!</h1>
+          <Button
+            variant="contained"
+            onClick={() => {
+              navigate("/login");
+            }}
+          >
+            Login
+          </Button>
+          <Button
+            variant="outlined"
+            onClick={() => {
+              navigate("/signup");
+            }}
+          >
+            Signup
+          </Button>
+        </div>
       </div>
     );
   }

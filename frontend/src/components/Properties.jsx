@@ -21,34 +21,37 @@ function Properties() {
 
     fetchData();
 
-    const interval = setInterval(fetchData, 1000);
+    const interval = setInterval(fetchData, 2000);
 
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className="allproperties flex">
-      {properties.map((p) => (
-        <div className="singleproperty flex">
-          <div className="singpropimg">
-            {p.pimages.map((image, index) => (
-              <img
-                key={`${p.pid}-${index}`}
-                src={`http://localhost:3000/uploads/${image}`}
-                alt={`Image ${index}`}
-               onClick={()=>{
-                navigate(`/property/${p.pid}`)
-               }}/>
-            ))}
+    <div className="back flex">
+      <div className="allproperties flex">
+        {properties.map((p) => (
+          <div className="singleproperty flex">
+            <div className="singpropimg">
+              {p.pimages.map((image, index) => (
+                <img
+                  key={`${p.pid}-${index}`}
+                  src={`http://localhost:3000/uploads/${image}`}
+                  alt={`Image ${index}`}
+                  onClick={() => {
+                    navigate(`/property/${p.pid}`);
+                  }}
+                />
+              ))}
+            </div>
+            <div className="singpropdesc flex">
+              <p>Id-{p.pid}</p>
+              <p>
+                {p.ptype} for {p.purpose} in {p.plocation}.
+              </p>
+            </div>
           </div>
-          <div className="singpropdesc flex">
-            <p>Id-{p.pid}</p>
-            <p>
-              {p.ptype} for {p.purpose} in {p.plocation}.
-            </p>
-          </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 }

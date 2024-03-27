@@ -58,14 +58,24 @@ body {
     flex-direction: column;
     gap: 10px;
 }
+.addpropmain{
+    width: 100%;
+    height: 100vh;
+    align-items:center;
+    justify-content: center;
+    background: url("https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
 .addpropcont {
+    margin-top: 10vh;
     margin-inline: auto;
     width: fit-content;
-    background-color: rgb(189, 187, 187);
-    padding: 20px;
+    background-color: rgba(9, 9, 9, 0.5);
+    backdrop-filter: blur(5px);
+    padding: 10px;
     border-radius: 5px;
-    margin-top: 10vh;
 }
 
 .addpropcont Button {
@@ -81,8 +91,16 @@ Button {
     margin-top: 10vh;
     flex-wrap: wrap;
     width: 100%;
-    height: auto;
-    justify-content: center;
+    height:fit-content;
+     justify-content: center;
+    align-items:center;
+}
+.back{
+    width: 100%;
+    min-height: 100vh;
+    background: url("https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .singpropimg {
@@ -145,9 +163,14 @@ Button {
 
 .singlproppage {
     width: 100%;
-    margin-top: 5vb;
+    margin-top: 5vh;
     padding: 10px;
     min-height: 100vh;
+    background: url("https://images.pexels.com/photos/912110/pexels-photo-912110.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    
 }
 
 .sp-img-desc {
@@ -234,4 +257,33 @@ Button {
     border-radius: 10px;
     border: 1px solid rgb(110, 109, 109);
     box-shadow: rgba(184, 182, 182, 0.6) 1px 3px 9px;
+}
+
+.loginback{
+    width: 100%;
+    min-height: 100vh;
+    background: url("https://images.pexels.com/photos/39624/padlock-lock-chain-key-39624.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    align-items: center;
+    justify-content: center;
+}
+.signupback{
+    width: 100%;
+    min-height: 100vh;
+    background: url("https://images.pexels.com/photos/4473400/pexels-photo-4473400.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.editpropertiespage{
+    width: 100%;
+    min-height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
