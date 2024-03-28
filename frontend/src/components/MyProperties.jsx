@@ -21,7 +21,7 @@ function MyProperties() {
   }, []);
   if(myprop.length>=1){
     return (
-      <div className="allproperties flex">
+      <div className="allproperties myproperties flex">
         {myprop.map((p) => (
           <div className="singleproperty flex">
             <div className="singpropimg">

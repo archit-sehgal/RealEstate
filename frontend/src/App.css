@@ -58,10 +58,11 @@ body {
     flex-direction: column;
     gap: 10px;
 }
-.addpropmain{
+
+.addpropmain {
     width: 100%;
     height: 100vh;
-    align-items:center;
+    align-items: center;
     justify-content: center;
     background: url("https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
     background-repeat: no-repeat;
@@ -88,14 +89,23 @@ Button {
 }
 
 .allproperties {
-    margin-top: 10vh;
+    margin-top: 50px;
     flex-wrap: wrap;
     width: 100%;
-    height:fit-content;
-     justify-content: center;
-    align-items:center;
+    height: fit-content;
+    justify-content: center;
+    align-items: center;
 }
-.back{
+
+.myproperties {
+    padding-top: 20px;
+    background: url("https://images.pexels.com/photos/2271683/pexels-photo-2271683.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.back {
     width: 100%;
     min-height: 100vh;
     background: url("https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
@@ -170,7 +180,7 @@ Button {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    
+
 }
 
 .sp-img-desc {
@@ -251,7 +261,7 @@ Button {
 .querycont {
     padding: 10px;
     margin: 10px 0px;
-    flex-direction:column;
+    flex-direction: column;
     max-width: 400px;
     background-color: rgb(222, 219, 219);
     border-radius: 10px;
@@ -259,7 +269,7 @@ Button {
     box-shadow: rgba(184, 182, 182, 0.6) 1px 3px 9px;
 }
 
-.loginback{
+.loginback {
     width: 100%;
     min-height: 100vh;
     background: url("https://images.pexels.com/photos/39624/padlock-lock-chain-key-39624.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
@@ -269,7 +279,8 @@ Button {
     align-items: center;
     justify-content: center;
 }
-.signupback{
+
+.signupback {
     width: 100%;
     min-height: 100vh;
     background: url("https://images.pexels.com/photos/4473400/pexels-photo-4473400.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
@@ -280,10 +291,26 @@ Button {
     justify-content: center;
 }
 
-.editpropertiespage{
+.editpropertiespage {
     width: 100%;
     min-height: 100vh;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.queriesmain {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #e5e5f7;
+    background: repeating-linear-gradient(45deg, #444cf7, #444cf7 5px, #e5e5f7 5px, #e5e5f7 25px);
+}
+.queriesmain h1{
+    background-color: whitesmoke;
+    width: fit-content;
+    padding: 5px;
+    background-color: rgb(222, 219, 219);
+    border-radius: 5px;
+    border: 1px solid rgb(136, 135, 135);
+    box-shadow: rgba(184, 182, 182, 0.6) 1px 3px 9px;
 }
